@@ -2,6 +2,7 @@
 This is a Tic-Tac-Toe game made using NodeCLI 
 
 Comandos a utilizar:
+
 	"start": Empezar nuevo juego
 	"restart": Reiniciar un juego ya empezado
 	"tl": Colocar X o O en la esquina superior izquierda
