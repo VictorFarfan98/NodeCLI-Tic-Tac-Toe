@@ -15,11 +15,11 @@ module.exports = () => {
     
     switch (cmd) {
         case 'start':
-            require('./cmds/start')(args)
+            require('./cmds/start')
             break
 
-        case 'version':
-            require('./cmds/version')(args)
+        case 'write':
+            require('./cmds/write')(args)
             break
 
         case 'help':

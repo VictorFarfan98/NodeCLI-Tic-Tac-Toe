@@ -1,19 +1,6 @@
-tl = " ";
-tc = " ";
-tr = " ";
-cl = " ";
-cc = " ";
-cr = " ";
-bl = " ";
-bc = " ";
-br = " ";
+const func = require('./data.js');
 
-module.exports = (args) => {
-    console.log();
-    console.log(" " + tl + " | " + tc + " | " + tr + " ");
-    console.log("-----------")
-    console.log(" " + cl + " | " + cc + " | " + cr + " ");
-    console.log("-----------")
-    console.log(" " + bl + " | " + bc + " | " + br + " ");
-}
-
+//console.log("Vamos a empezar un juego nuevo")
+//console.log("Final: " + func.default);
+func.savetoFile(func.default);
+func.showBoard();
