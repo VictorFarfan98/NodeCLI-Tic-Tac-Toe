@@ -1,16 +1,22 @@
 module.exports = (args) => {
-    var info = `How to play 
-    "start": Empezar nuevo juego
-    "restart": Reiniciar un juego ya empezado
-    "tl": Colocar X o O en la esquina superior izquierda
-    "tc": Colocar X o O en el centro superior
-    "tr": Colocar X o O en la esquina superior derecha
-    "cl": Colocar X o O en el centro lado izquierdo
-    "cc": Colocar X o O en el centro
-    "cr": Colocar X o O en el centro lado derecho
-    "bl": Colocar X o O en la esquina inferior izquierda
-    "bc": Colocar X o O en la parte inferior central
-    "br": Colocar X o O en la esquina inferior izquierda`
+    var info = `This is a Tic-Tac-Toe game made using NodeCLI 
+
+    HOW TO PLAY:
+    
+        "start": Empezar nuevo juego o Reiniciar el juego actual
+        "write": El formato de este comando es write <position_command> <figure_command>
+            --Los <position_command> pueden ser:
+                "tl": Esquina superior izquierda
+                "tc": Centro superior
+                "tr": Esquina superior derecha
+                "cl": Centro lado izquierdo
+                "cc": Centro
+                "cr": Centro lado derecho
+                "bl": Esquina inferior izquierda
+                "bc": Parte inferior central
+                "br": Esquina inferior izquierda
+            --Los <figure command> pueden ser <X> o <O>
+        "help": Reiniciar un juego ya empezado`
 
 
     console.log(info)

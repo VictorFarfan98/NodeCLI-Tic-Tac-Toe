@@ -2,7 +2,7 @@ const minimist = require('minimist')
 
 module.exports = () => {
     const args = minimist(process.argv.slice(2))
-    console.log(args)
+    //console.log(args)
     let cmd = args._[0] || 'help'
 
     if (args.version || args.v) {
@@ -24,10 +24,6 @@ module.exports = () => {
 
         case 'help':
             require('./cmds/help')(args)
-            break
-        
-        case 'forecast':
-            require('./cmds/forecast')(args)
             break
         
         default:

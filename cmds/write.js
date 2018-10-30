@@ -21,7 +21,7 @@ module.exports = (args) => {
     switch(position){
         case "tl":                    
             if(storage['positions'].tl === " "){
-                console.log("TL esta libre");
+                //console.log("TL esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.tl = signo;
@@ -47,15 +47,16 @@ module.exports = (args) => {
                 //console.log("Vamos a guardar: " + storage)
                 
             }else{
-                console.log("TL no esta libre")
+                //console.log("TL no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "tc":
             if(storage['positions'].tc === " "){
-                console.log("TC esta libre");
+                //console.log("TC esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.tc = signo; 
@@ -77,15 +78,16 @@ module.exports = (args) => {
                 }
                 
             }else{
-                console.log("TC no esta libre")
+                //console.log("TC no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "tr":
             if(storage['positions'].tr === " "){
-                console.log("TR esta libre");
+                //console.log("TR esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.tr = signo;
@@ -109,15 +111,16 @@ module.exports = (args) => {
                 }
                 
             }else{
-                console.log("TR no esta libre")
+                //console.log("TR no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "cl":
             if(storage['positions'].cl === " "){
-                console.log("CL esta libre");
+                //console.log("CL esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.cl = signo;
@@ -139,15 +142,16 @@ module.exports = (args) => {
                 }                
                 
             }else{
-                console.log("CL no esta libre")
+                //console.log("CL no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "cc":
             if(storage['positions'].cc === " "){
-                console.log("CC esta libre");
+                //console.log("CC esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.cc = signo;
@@ -173,15 +177,16 @@ module.exports = (args) => {
                 }                
                 
             }else{
-                console.log("CC no esta libre")
+                //console.log("CC no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "cr":
             if(storage['positions'].cr === " "){
-                console.log("CR esta libre");
+                //console.log("CR esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.cr = signo;
@@ -203,15 +208,16 @@ module.exports = (args) => {
                 }
                 
             }else{
-                console.log("CR no esta libre")
+                //console.log("CR no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "bl":
             if(storage['positions'].bl === " "){
-                console.log("BL esta libre");
+                //console.log("BL esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.bl = signo;
@@ -235,15 +241,16 @@ module.exports = (args) => {
                 }                
                 
             }else{
-                console.log("BL no esta libre")
+                //console.log("BL no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "bc":
             if(storage['positions'].bc === " "){
-                console.log("BC esta libre");
+                //console.log("BC esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.bc = signo;                    
@@ -265,15 +272,16 @@ module.exports = (args) => {
                 }                
                 
             }else{
-                console.log("BC no esta libre")
+                //console.log("BC no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         case "br":
             if(storage['positions'].br === " "){
-                console.log("BR esta libre");
+                //console.log("BR esta libre");
                 if(signo == "X" || signo == "O"){
                     if(signo != storage.last){
                         storage.positions.br = signo;
@@ -297,10 +305,11 @@ module.exports = (args) => {
                 }                
                 
             }else{
-                console.log("BR no esta libre")
+                //console.log("BR no esta libre")
             }
-            func.hasWon();
+            
             func.showBoard();
+            func.hasWon();
             break;
 
         default:

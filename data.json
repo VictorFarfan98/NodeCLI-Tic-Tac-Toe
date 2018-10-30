@@ -1,1 +1,1 @@
-{"positions":{"tl":"O","tc":"X","tr":" ","cl":"O","cc":"X","cr":" ","bl":" ","bc":"X","br":" "},"counters":{"won1":0,"won2":0,"won3":1,"won4":-2,"won5":3,"won6":0,"won7":0,"won8":1,"total":5},"last":"X","won":false}
+{"positions":{"tl":"X","tc":"O","tr":"X","cl":"X","cc":"O","cr":"O","bl":"O","bc":"X","br":"X"},"counters":{"won1":1,"won2":-1,"won3":1,"won4":1,"won5":-1,"won6":1,"won7":1,"won8":-1,"total":9},"last":"X","won":false}

@@ -47,6 +47,7 @@ module.exports = {
     },
 
     hasWon: function(){
+        //console.log("\n");
         fs.readFile('data.json', function (err, data) {
             if (err) throw err;
             
@@ -60,16 +61,17 @@ module.exports = {
                 for(var x in storage.counters){
                     if(x != "total" && storage.counters[x] == 3){
                         console.log("Felicidades!! X ha ganado");
-                        //return true;
+                        
                     }
                     if(x != "total" && storage.counters[x] == -3){
                         console.log("Felicidades!! O ha ganado");
-                        //return true;
+                        
                     }                                        
                 }
                 if(storage.counters.total == 9){
                     console.log("El juego ha terminado en empate!!");
                 }
+                
         }});          
     }
 };
