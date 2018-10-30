@@ -49,6 +49,7 @@ module.exports = (args) => {
             }else{
                 console.log("TL no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -78,6 +79,7 @@ module.exports = (args) => {
             }else{
                 console.log("TC no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -109,6 +111,7 @@ module.exports = (args) => {
             }else{
                 console.log("TR no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -138,6 +141,7 @@ module.exports = (args) => {
             }else{
                 console.log("CL no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -171,6 +175,7 @@ module.exports = (args) => {
             }else{
                 console.log("CC no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -200,6 +205,7 @@ module.exports = (args) => {
             }else{
                 console.log("CR no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -231,6 +237,7 @@ module.exports = (args) => {
             }else{
                 console.log("BL no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -260,6 +267,7 @@ module.exports = (args) => {
             }else{
                 console.log("BC no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 
@@ -291,6 +299,7 @@ module.exports = (args) => {
             }else{
                 console.log("BR no esta libre")
             }
+            func.hasWon();
             func.showBoard();
             break;
 

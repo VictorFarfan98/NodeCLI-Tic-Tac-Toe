@@ -30,7 +30,8 @@ module.exports = {
 
     new: {'positions': {'tl': ' ', 'tc': ' ', 'tr': ' ', 'cl': ' ', 'cc': ' ', 'cr': ' ', 'bl': ' ', 'bc': ' ', 'br': ' '},
             'counters': {'won1': 0, 'won2': 0, 'won3': 0, 'won4': 0, 'won5': 0, 'won6': 0, 'won7': 0, 'won8': 0, 'total': 0},
-            'last': " "
+            'last': " ",
+            'won': false
         },
 
     savetoFile: function(tosave){
@@ -57,7 +58,17 @@ module.exports = {
                 storage = JSON.parse(data);
                 //console.log(storage['positions']);
                 for(var x in storage.counters){
-                    console.log(x);
+                    if(x != "total" && storage.counters[x] == 3){
+                        console.log("Felicidades!! X ha ganado");
+                        //return true;
+                    }
+                    if(x != "total" && storage.counters[x] == -3){
+                        console.log("Felicidades!! O ha ganado");
+                        //return true;
+                    }                                        
+                }
+                if(storage.counters.total == 9){
+                    console.log("El juego ha terminado en empate!!");
                 }
         }});          
     }
