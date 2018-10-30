@@ -6,23 +6,32 @@ module.exports = {
     showBoard: function(){
         var values;
         fs.readFile('data.json', function (err, data) {
+            if (err) throw err;
+            
             if (data) {
                 //console.log("Read JSON file: " + data);
                 data = data.toString().trim(); 
                 
                 //or data = JSON.parse(JSON.stringify(data.trim()));
                 storage = JSON.parse(data);
-                //console.log(storage.tl);
+                //console.log(storage['positions']);
                 console.log();
-                console.log(" " + storage.tl + " | " + storage.tc + " | " + storage.tr + " ");
+                console.log(" " + storage['positions'].tl + " | " + storage['positions'].tc + " | " + storage['positions'].tr + " ");
                 console.log("-----------")
-                console.log(" " + storage.cl + " | " + storage.cc + " | " + storage.cr + " ");
+                console.log(" " + storage['positions'].cl + " | " + storage['positions'].cc + " | " + storage['positions'].cr + " ");
                 console.log("-----------")
-                console.log(" " + storage.bl + " | " + storage.bc + " | " + storage.br + " ");
+                console.log(" " + storage['positions'].bl + " | " + storage['positions'].bc + " | " + storage['positions'].br + " ");
         }});      
     },
     
     default: {'tl': ' ', 'tc': ' ', 'tr': ' ', 'cl': ' ', 'cc': ' ', 'cr': ' ', 'bl': ' ', 'bc': ' ', 'br': ' '},
+
+    defaultcount: {'won1': 0, 'won2': 0, 'won3': 0, 'won4': 0, 'won5': 0, 'won6': 0, 'won7': 0, 'won8': 0},
+
+    new: {'positions': {'tl': ' ', 'tc': ' ', 'tr': ' ', 'cl': ' ', 'cc': ' ', 'cr': ' ', 'bl': ' ', 'bc': ' ', 'br': ' '},
+            'counters': {'won1': 0, 'won2': 0, 'won3': 0, 'won4': 0, 'won5': 0, 'won6': 0, 'won7': 0, 'won8': 0, 'total': 0},
+            'last': " "
+        },
 
     savetoFile: function(tosave){
         tosave = JSON.stringify(tosave);
@@ -34,5 +43,22 @@ module.exports = {
             // success case, the file was saved
             //console.log('Vamos a comenzar un nuevo juego!');
         });
+    },
+
+    hasWon: function(){
+        fs.readFile('data.json', function (err, data) {
+            if (err) throw err;
+            
+            if (data) {
+                //console.log("Read JSON file: " + data);
+                data = data.toString().trim(); 
+                
+                //or data = JSON.parse(JSON.stringify(data.trim()));
+                storage = JSON.parse(data);
+                //console.log(storage['positions']);
+                for(var x in storage.counters){
+                    console.log(x);
+                }
+        }});          
     }
 };

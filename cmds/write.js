@@ -2,7 +2,10 @@ const func = require('./data.js');
 const fs = require('fs');
 var storage;
 module.exports = (args) => {
-    console.log(args._[1]);
+    var position = args._[1].toLowerCase();
+    var signo = args._[2].toUpperCase();
+    //console.log(position);
+    //console.log(signo);
     /*
     fs.readFile('data.json', function (err, data) {
         if (data) {
@@ -14,14 +17,35 @@ module.exports = (args) => {
     }}); 
 */
     storage = JSON.parse(fs.readFileSync('data.json', 'utf-8').toString().trim())
-    
-    switch(args._[1]){
+    //console.log('AAAA:' + JSON.stringify(storage.positions.tl))
+    switch(position){
         case "tl":                    
-            if(storage.tl === " "){
+            if(storage['positions'].tl === " "){
                 console.log("TL esta libre");
-                storage.tl = "X";
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.tl = signo;
+                        if(signo == "X"){
+                            storage.counters.won1++;
+                            storage.counters.won4++
+                            storage.counters.won7++;
+                        }else{
+                            storage.counters.won1--;
+                            storage.counters.won4--
+                            storage.counters.won7--;
+                        }
+                        storage.counters.total++;
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }
+                
                 //console.log("Vamos a guardar: " + storage)
-                func.savetoFile(storage);
+                
             }else{
                 console.log("TL no esta libre")
             }
@@ -29,10 +53,28 @@ module.exports = (args) => {
             break;
 
         case "tc":
-            if(storage.tc === " "){
+            if(storage['positions'].tc === " "){
                 console.log("TC esta libre");
-                storage.tc = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.tc = signo; 
+                        if(signo == "X"){
+                            storage.counters.won1++;
+                            storage.counters.won5++;                        
+                        }else{
+                            storage.counters.won1--;
+                            storage.counters.won5--;  
+                        }
+                        storage.counters.total++;  
+                        storage.last = signo;                 
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }
+                
             }else{
                 console.log("TC no esta libre")
             }
@@ -40,10 +82,30 @@ module.exports = (args) => {
             break;
 
         case "tr":
-            if(storage.tc === " "){
+            if(storage['positions'].tr === " "){
                 console.log("TR esta libre");
-                storage.tr = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.tr = signo;
+                        if(signo == "X"){
+                            storage.counters.won1++;
+                            storage.counters.won6++;
+                            storage.counters.won8++;                      
+                        }else{
+                            storage.counters.won1--;
+                            storage.counters.won6--;
+                            storage.counters.won8--;  
+                        }
+                        storage.counters.total++; 
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }
+                
             }else{
                 console.log("TR no esta libre")
             }
@@ -51,10 +113,28 @@ module.exports = (args) => {
             break;
 
         case "cl":
-            if(storage.cl === " "){
+            if(storage['positions'].cl === " "){
                 console.log("CL esta libre");
-                storage.cl = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.cl = signo;
+                        if(signo == "X"){
+                            storage.counters.won2++;
+                            storage.counters.won4++;                                              
+                        }else{
+                            storage.counters.won2--;
+                            storage.counters.won4--;                    
+                        }
+                        storage.counters.total++; 
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }                
+                
             }else{
                 console.log("CL no esta libre")
             }
@@ -62,10 +142,32 @@ module.exports = (args) => {
             break;
 
         case "cc":
-            if(storage.cc === " "){
+            if(storage['positions'].cc === " "){
                 console.log("CC esta libre");
-                storage.cc = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.cc = signo;
+                        if(signo == "X"){
+                            storage.counters.won2++;
+                            storage.counters.won5++;                                              
+                            storage.counters.won7++;
+                            storage.counters.won8++;
+                        }else{
+                            storage.counters.won2--;
+                            storage.counters.won5--;
+                            storage.counters.won7--;
+                            storage.counters.won8--;                    
+                        }
+                        storage.counters.total++;
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }                
+                
             }else{
                 console.log("CC no esta libre")
             }
@@ -73,10 +175,28 @@ module.exports = (args) => {
             break;
 
         case "cr":
-            if(storage.cr === " "){
+            if(storage['positions'].cr === " "){
                 console.log("CR esta libre");
-                storage.cr = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.cr = signo;
+                        if(signo == "X"){
+                            storage.counters.won2++;
+                            storage.counters.won6++;                                              
+                        }else{
+                            storage.counters.won2--;
+                            storage.counters.won6--;                    
+                        }
+                        storage.counters.total++; 
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }
+                
             }else{
                 console.log("CR no esta libre")
             }
@@ -84,10 +204,30 @@ module.exports = (args) => {
             break;
 
         case "bl":
-            if(storage.bl === " "){
+            if(storage['positions'].bl === " "){
                 console.log("BL esta libre");
-                storage.bl = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.bl = signo;
+                        if(signo == "X"){
+                            storage.counters.won3++;
+                            storage.counters.won4++;                                              
+                            storage.counters.won8++;
+                        }else{
+                            storage.counters.won3--;
+                            storage.counters.won4--;
+                            storage.counters.won8--;                    
+                        }
+                        storage.counters.total++;
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }                
+                
             }else{
                 console.log("BL no esta libre")
             }
@@ -95,10 +235,28 @@ module.exports = (args) => {
             break;
 
         case "bc":
-            if(storage.bc === " "){
+            if(storage['positions'].bc === " "){
                 console.log("BC esta libre");
-                storage.bc = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.bc = signo;                    
+                        if(signo == "X"){
+                            storage.counters.won3++;
+                            storage.counters.won5++;                                                                      
+                        }else{
+                            storage.counters.won3--;
+                            storage.counters.won5--;                        
+                        }
+                        storage.counters.total++;
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }                
+                
             }else{
                 console.log("BC no esta libre")
             }
@@ -106,10 +264,30 @@ module.exports = (args) => {
             break;
 
         case "br":
-            if(storage.br === " "){
+            if(storage['positions'].br === " "){
                 console.log("BR esta libre");
-                storage.br = "X";
-                func.savetoFile(storage);
+                if(signo == "X" || signo == "O"){
+                    if(signo != storage.last){
+                        storage.positions.br = signo;
+                        if(signo == "X"){
+                            storage.counters.won3++;
+                            storage.counters.won6++;                                                                      
+                            storage.counters.won7++;
+                        }else{
+                            storage.counters.won3--;
+                            storage.counters.won6--;                        
+                            storage.counters.won7--;
+                        }
+                        storage.counters.total++;
+                        storage.last = signo;
+                        func.savetoFile(storage);
+                    }else{
+                        console.log("Signo invalido. Acaba de ser el turno de " + storage.last);
+                    }
+                }else{
+                    console.log("Signo invalido. El comando debe ser <X> o <O>");
+                }                
+                
             }else{
                 console.log("BR no esta libre")
             }
